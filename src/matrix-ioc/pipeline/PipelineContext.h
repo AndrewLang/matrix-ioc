@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ObjectMap.h"
+#include "../common/ObjectMap.h"
 
 #include <map>
 #include <string>

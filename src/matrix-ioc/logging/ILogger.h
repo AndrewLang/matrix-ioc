@@ -1,6 +1,6 @@
 #pragma once
-#include "TextFormatter.h"
-#include "StringExtensions.h"
+#include "../common/TextFormatter.h"
+#include "../common/StringExtensions.h"
 #include "LogMessageName.h"
 
 #include <string>

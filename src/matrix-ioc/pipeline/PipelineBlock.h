@@ -1,7 +1,7 @@
 #pragma once
 #include "IPipelineBlock.h"
-#include "ILoggerFactory.h"
-#include "ILogger.h"
+#include "../logging/ILoggerFactory.h"
+#include "../logging/ILogger.h"
 
 #include <functional>
 

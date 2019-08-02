@@ -1,7 +1,7 @@
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "VsOutputLogger.h"
 #include "VsOutput.h"
-#include "StringExtensions.h"
+#include "../common/StringExtensions.h"
 
 namespace Matrix
 {

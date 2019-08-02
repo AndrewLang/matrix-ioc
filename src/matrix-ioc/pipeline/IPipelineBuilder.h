@@ -2,7 +2,7 @@
 #include "PipelineContext.h"
 #include "IPipeline.h"
 #include "IPipelineBlock.h"
-#include "ObjectMap.h"
+#include "../common/ObjectMap.h"
 
 #include <functional>
 

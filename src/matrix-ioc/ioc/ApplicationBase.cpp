@@ -1,12 +1,13 @@
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "ApplicationBase.h"
 #include "ServiceContainer.h"
-#include "LoggerFactory.h"
-#include "ILoggerFactory.h"
-#include "ConsoleLoggerProvider.h"
-#include "VsOutputLoggerProvider.h"
-#include "ConfigurationBuilder.h"
-#include "MemoryConfigurationProvider.h"
+#include "../logging/ILoggerFactory.h"
+#include "../logging/ILogger.h"
+#include "../logging//LoggerFactory.h"
+#include "../logging/ConsoleLoggerProvider.h"
+#include "../logging/VsOutputLoggerProvider.h"
+#include "../configuration/ConfigurationBuilder.h"
+#include "../configuration/MemoryConfigurationProvider.h"
 
 #include <algorithm>
 

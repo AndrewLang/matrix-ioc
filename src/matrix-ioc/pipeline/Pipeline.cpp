@@ -1,6 +1,6 @@
-#include "stdafx.h"
+#include "../stdafx.h"
 #include "Pipeline.h"
-#include "Guard.h"
+#include "../common/Guard.h"
 
 #include <iostream>
 #include <algorithm>

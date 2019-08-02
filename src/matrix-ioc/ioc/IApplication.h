@@ -1,6 +1,6 @@
 #pragma once
 #include "IComponent.h"
-#include "IConfiguration.h"
+#include "../configuration/IConfiguration.h"
 #include "IApplicationStartBlock.h"
 
 #include <memory>

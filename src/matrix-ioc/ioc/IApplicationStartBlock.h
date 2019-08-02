@@ -1,5 +1,5 @@
 #pragma once
-#include "IPipelineBlock.h"
+#include "../pipeline/IPipelineBlock.h"
 #include "ApplicationStartBlockContext.h"
 
 namespace Matrix

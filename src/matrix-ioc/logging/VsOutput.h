@@ -7,8 +7,8 @@
 #include <time.h>
 #include <stdio.h>
 
-#include "TextFormatter.h"
-#include "StringExtensions.h"
+#include "../common/TextFormatter.h"
+#include "../common/StringExtensions.h"
 
 using std::chrono::system_clock;
 using std::string;
@@ -18,7 +18,7 @@ namespace Matrix
 	class VsOutput
 	{
 	public:
-		
+
 		template<typename ... Args >
 		static void debug(Args&& ... args)
 		{
@@ -27,8 +27,8 @@ namespace Matrix
 
 			message = StringExtensions::wrapBySquare(StringExtensions::getTimestamp()) + SPACE + message;
 
-			std::wstring stemp = std::wstring(message.begin(), message.end());
-			OutputDebugString(stemp.c_str());
+			logMessage(message);
+			
 		}
 
 		template<typename ... Args >
@@ -38,29 +38,32 @@ namespace Matrix
 			auto message = formatter.format(args...);
 			message = StringExtensions::wrapBySquare(StringExtensions::getTimestamp()) + SPACE + message + StringExtensions::NewLine;
 
-			std::wstring stemp = std::wstring(message.begin(), message.end());
-			OutputDebugString(stemp.c_str());
+			logMessage(message);
 		}
 
 		template<typename ... Args >
 		static void writeWithName(string name, Args&& ... args)
-		{			
+		{
 			TextFormatter formatter;
-			auto message = StringExtensions::wrapBySquare(StringExtensions::getTimestamp()) 
-				+ SPACE 
-				+ StringExtensions::paddingString(name) 
-				+ SPACE 
-				+ formatter.format(args...) 
+			auto message = StringExtensions::wrapBySquare(StringExtensions::getTimestamp())
+				+ SPACE
+				+ StringExtensions::paddingString(name)
+				+ SPACE
+				+ formatter.format(args...)
 				+ StringExtensions::NewLine;
 
-			std::wstring stemp = std::wstring(message.begin(), message.end());
-			OutputDebugString(stemp.c_str());
+			logMessage(message);
 		}
 
 	private:
 
-		
-		
+		inline static void logMessage(string message)
+		{			
+			LPCTSTR lp = message.c_str(); 
+
+			OutputDebugString(lp);
+		}
+
 	};
 
 

@@ -1,6 +1,6 @@
 #pragma once
-#include "PipelineContext.h"
-#include "IServiceProvider.h"
+#include "../pipeline/PipelineContext.h"
+#include "../ioc/IServiceProvider.h"
 
 using std::shared_ptr;
 

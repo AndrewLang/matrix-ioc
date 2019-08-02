@@ -1,6 +1,6 @@
 #pragma once
 #include "IPipelineBuilder.h"
-#include "IServiceProvider.h"
+#include "../ioc/IServiceProvider.h"
 
 #include <vector>
 
