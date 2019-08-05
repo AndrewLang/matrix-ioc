@@ -9,7 +9,8 @@ using std::string;
 
 namespace Matrix
 {
-	class EXPORT_SYMBOL BaseException : public exception
+	// EXPORT_SYMBOL
+	class  BaseException : public exception
 	{
 	public:
 		BaseException();

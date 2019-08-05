@@ -3,15 +3,14 @@
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 
-message(STATUS "Source Dir" ${CMAKE_SOURCE_DIR})
+message(STATUS "Source Dir: " ${CMAKE_SOURCE_DIR})
 
 project(matrix-ioc)
 
-file(GLOB headers *.h)
-file(GLOB sourceFiles *.cpp)
 
 add_library( ${PROJECT_NAME} 
 	SHARED 
+
 	common/BaseException.cpp
 	common/ArgumentNullException.cpp
 	common/FileLoadException.cpp

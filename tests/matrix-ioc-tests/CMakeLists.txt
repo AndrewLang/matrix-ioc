@@ -5,28 +5,28 @@ include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/logging)
 include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/pipeline)
 include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/task)
 
+link_directories(${binary_dir}/lib)
+
+ # file(GLOB_RECURSE )
 
 project(ioc-tests)
 
-add_executable (${PROJECT_NAME} main.cpp main.h)
+add_executable (${PROJECT_NAME} 
+	main.cpp 	
+	# test-demo.cpp
+	)
 
 # Include sub-projects.
 
-add_dependencies (${PROJECT_NAME}, gtest)
+add_dependencies(${PROJECT_NAME} gtest)
 
-#####################################
-# Configure the test to use GoogleTest
-#
-# If used often, could be made a macro.
+if(MSVC)
+	
+	# target_link_libraries(${PROJECT_NAME} gtest)
+	# target_link_libraries(${PROJECT_NAME} ${binary_dir}/lib/gtestd.lib)
+	# target_link_libraries(${PROJECT_NAME} ${binary_dir}/lib/gtest_maind.lib)	
+endif(MSVC)
 
-add_dependencies(registerer_test gtest)
-include_directories(${source_dir}/include)
-target_link_libraries(registerer_test ${binary_dir}/libgtest.a)
-target_link_libraries(registerer_test ${binary_dir}/libgtest_main.a)
+# target_link_libraries(${PROJECT_NAME} ${binary_dir}/lib/gtestd.lib)
 
-##################################
-# Just make the test runnable with
-#   $ make test
-
-enable_testing()
-add_test(NAME    registerer_test COMMAND registerer_test)
+# add_test( NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
