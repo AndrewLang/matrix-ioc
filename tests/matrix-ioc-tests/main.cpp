@@ -1,18 +1,18 @@
 #include "main.h"
- #include "Do.h"
+ // #include "Do.h"
 
-//#include "gtest/gtest.h"
+#include "gtest/gtest.h"
 
 using namespace std;
- using namespace Matrix;
+// using namespace Matrix;
 
 int main(int argc, char *argv[])
 {
-	// ::testing::InitGoogleTest(&argc, argv);
+	::testing::InitGoogleTest(&argc, argv);
 	
-	// return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 
-	cout << "Unit tests for IOC." << endl;
+	/*cout << "Unit tests for IOC." << endl;
 
 	int tryCount = 0;
 	auto lambda = [&](int x) {
@@ -27,5 +27,5 @@ int main(int argc, char *argv[])
 
 	getchar();
 
-	return 0;
+	return 0;*/
 }
