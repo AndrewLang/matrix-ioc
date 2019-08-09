@@ -1,6 +1,7 @@
 
 #include "main.h"
 #include "Do.h"
+#include "ConsoleLogger.h"
 
 using namespace std;
 using namespace Matrix;
@@ -19,6 +20,11 @@ int main()
 	action.attempt(4).sleep(100).start(5);
 
 	cout << "value " << tryCount << endl;
+
+
+	ConsoleLogger logger("main");
+
+	logger.debug("demo application");
 
 	getchar();
 

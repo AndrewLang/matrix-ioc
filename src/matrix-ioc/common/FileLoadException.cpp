@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "FileLoadException.h"
 
 namespace Matrix

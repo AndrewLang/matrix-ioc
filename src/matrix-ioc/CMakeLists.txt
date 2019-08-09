@@ -1,17 +1,19 @@
 ﻿
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/common)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/configuration)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/ioc)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/logging)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/pipeline)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/task)
 
 
 message(STATUS "Source Dir: " ${CMAKE_SOURCE_DIR})
 
 project(matrix-ioc)
 
-
-add_library( ${PROJECT_NAME} 
-	SHARED 
-
-	common/BaseException.cpp
+SET(SourceFiles common/BaseException.cpp
 	common/ArgumentNullException.cpp
 	common/FileLoadException.cpp
 	common/FileNotExistsException.cpp	
@@ -54,8 +56,10 @@ add_library( ${PROJECT_NAME}
 	task/DoWithResult.cpp
 	task/CancellationToken.cpp
 	task/Task.cpp
-	task/TaskWithResult.cpp
-	)
+	task/TaskWithResult.cpp)
+
+
+add_library( ${PROJECT_NAME} SHARED ${SourceFiles})
 
 add_definitions(-DEXPMODULE)
 

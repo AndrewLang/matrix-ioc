@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "StringExtensions.h"
 
 namespace Matrix

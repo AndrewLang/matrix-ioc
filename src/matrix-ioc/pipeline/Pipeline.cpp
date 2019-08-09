@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "Pipeline.h"
 #include "../common/Guard.h"
 
