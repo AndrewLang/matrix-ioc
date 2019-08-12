@@ -2,12 +2,7 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <any>
 
-using std::shared_ptr;
-using std::string;
-using std::vector;
-using std::any;
 
 namespace Matrix
 {
@@ -18,12 +13,12 @@ namespace Matrix
 	public:
 		virtual void load() = 0;
 
-		virtual void save(shared_ptr<IConfiguration> configuration) = 0;
+		virtual void save(std::shared_ptr<IConfiguration> configuration) = 0;
 
-		virtual bool tryGet(string key, string& value, string defaultValue = "") = 0;
+		virtual bool tryGet(std::string key, std::string& value, std::string defaultValue = "") = 0;
 
-		virtual IConfigurationProvider& set(string key, string value) = 0;
+		virtual IConfigurationProvider& set(std::string key, std::string value) = 0;
 
-		virtual vector<string> getChildKeys(vector<string> earlierKeys, string parentPath, string delimiter) = 0;
+		virtual std::vector<std::string> getChildKeys(std::vector<std::string> earlierKeys, std::string parentPath, std::string delimiter) = 0;
 	};
 }

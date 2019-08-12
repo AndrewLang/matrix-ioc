@@ -1,5 +1,7 @@
 ﻿
+cmake_minimum_required (VERSION 3.12)
 
+# import header files
 include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc)
 include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/common)
 include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/configuration)
@@ -9,11 +11,19 @@ include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/pipeline)
 include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/task)
 
 
-message(STATUS "Source Dir: " ${CMAKE_SOURCE_DIR})
-
 project(matrix-ioc)
 
-SET(SourceFiles common/BaseException.cpp
+# header files
+
+SET(HeaderFiles 
+	pch.h
+	)
+
+
+# source files
+SET(SourceFiles 
+	pch.cpp
+	common/BaseException.cpp
 	common/ArgumentNullException.cpp
 	common/FileLoadException.cpp
 	common/FileNotExistsException.cpp	
@@ -59,7 +69,11 @@ SET(SourceFiles common/BaseException.cpp
 	task/TaskWithResult.cpp)
 
 
-add_library( ${PROJECT_NAME} SHARED ${SourceFiles})
+# add library definition
+add_library( ${PROJECT_NAME} SHARED ${SourceFiles} ${HeaderFiles})
 
 add_definitions(-DEXPMODULE)
+
+
+add_precompiled_header(${PROJECT_NAME} pch.h SOURCE_CXX pch.cpp FORCEINCLUDE)
 

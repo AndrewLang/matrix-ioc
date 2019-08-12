@@ -8,12 +8,6 @@
 
 #include "../common/StringExtensions.h"
 
-using std::shared_ptr;
-using std::vector;
-using std::string;
-using std::map;
-using std::any;
-
 namespace Matrix
 {
 	class IConfigurationSection;
@@ -21,13 +15,13 @@ namespace Matrix
 	static const char ConfigureKeyDelimiter = ':';
 
 	template<typename TReturn>
-	string convertToString(const string & value)
+	std::string convertToString(const std::string & value)
 	{
 		return value;
 	}
 
 	template<typename TReturn>
-	TReturn convertTo(const string & value)
+	TReturn convertTo(const std::string & value)
 	{
 		std::istringstream stream(value);
 		TReturn target;
@@ -51,7 +45,7 @@ namespace Matrix
 	}
 
 	template<typename TReturn>
-	string toString(TReturn value)
+	std::string toString(TReturn value)
 	{
 		std::ostringstream stream;
 		stream << value;
@@ -63,12 +57,12 @@ namespace Matrix
 	{
 	public:
 
-		virtual bool tryGet(string key, string& value, string defaultValue = "") = 0;
+		virtual bool tryGet(std::string key, std::string& value, std::string defaultValue = "") = 0;
 
-		virtual IConfiguration& set(string key, string value) = 0;
+		virtual IConfiguration& set(std::string key, std::string value) = 0;
 
 		template<typename TReturn>
-		IConfiguration& setProperty(string name, TReturn value)
+		IConfiguration& setProperty(std::string name, TReturn value)
 		{
 			auto stringValue = toString<TReturn>(value);
 			set(name, stringValue);
@@ -77,7 +71,7 @@ namespace Matrix
 		}
 
 		template<typename TReturn>
-		TReturn getProperty(string key, TReturn defaultValue = TReturn())
+		TReturn getProperty(std::string key, TReturn defaultValue = TReturn())
 		{
 			string value;
 			if (tryGet(key, value))

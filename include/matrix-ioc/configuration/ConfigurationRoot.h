@@ -10,7 +10,7 @@ namespace Matrix
 		, public std::enable_shared_from_this<ConfigurationRoot>
 	{
 	public:
-		ConfigurationRoot(vector<shared_ptr<IConfigurationProvider>> providers);
+		ConfigurationRoot(std::vector<std::shared_ptr<IConfigurationProvider>> providers);
 
 		~ConfigurationRoot();
 
@@ -18,12 +18,12 @@ namespace Matrix
 
 		void save() override;
 
-		bool tryGet(string key, string& value, string defaultValue = "") override;
+		bool tryGet(std::string key, std::string& value, std::string defaultValue = "") override;
 
-		IConfiguration& set(string key, string value) override;
+		IConfiguration& set(std::string key, std::string value) override;
 
 	private:
-		vector<shared_ptr<IConfigurationProvider>> mProviders;
+		std::vector<std::shared_ptr<IConfigurationProvider>> mProviders;
 	};
 
 }

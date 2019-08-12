@@ -17,7 +17,7 @@
 
 namespace Matrix
 {
-	class EXPORT_SYMBOL StringExtensions
+	class StringExtensions
 	{
 	public:
 		const static int Padding = 25;
@@ -42,7 +42,7 @@ namespace Matrix
 		{
 			std::vector<std::string> result;
 
-			std::function isDelimiter = [](const std::string& delimiters, char c)
+			std::function<bool(const std::string, char)> isDelimiter = [](const std::string& delimiters, char c)
 			{
 				for (auto cValue : delimiters)
 				{

@@ -4,11 +4,9 @@
 #include <vector>
 #include <set>
 
-using std::set;
-
 namespace Matrix
 {
-	ConfigurationRoot::ConfigurationRoot(vector<shared_ptr<IConfigurationProvider>> providers)
+	ConfigurationRoot::ConfigurationRoot(std::vector<std::shared_ptr<IConfigurationProvider>> providers)
 		: mProviders(providers)
 	{
 	}
@@ -32,7 +30,7 @@ namespace Matrix
 			provider->save(shared_from_this());
 		}
 	}
-	bool ConfigurationRoot::tryGet(string key, string & value, string defaultValue)
+	bool ConfigurationRoot::tryGet(std::string key, std::string & value, std::string defaultValue)
 	{
 		for (auto provider : mProviders)
 		{
@@ -44,7 +42,7 @@ namespace Matrix
 
 		return false;
 	}
-	IConfiguration & ConfigurationRoot::set(string key, string value)
+	IConfiguration & ConfigurationRoot::set(std::string key, std::string value)
 	{
 		for (auto provider : mProviders)
 		{

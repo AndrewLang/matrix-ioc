@@ -39,9 +39,9 @@ namespace Matrix
 	{
 		mProviders.push_back(provider);
 
-		for (auto &[key, value] : mLoggers)
+		for (auto &pair : mLoggers)
 		{
-			value->addProvider(provider);
+			pair.second->addProvider(provider);			
 		}
 	}
 

@@ -1,8 +1,13 @@
 
 #include "ConfigurationProvider.h"
+#include "StringExtensions.h"
 
 namespace Matrix
 {
+	using std::shared_ptr;
+	using std::string;
+	using std::vector;
+
 	void ConfigurationProvider::load()
 	{
 	}
@@ -41,7 +46,8 @@ namespace Matrix
 		string prefix = parentPath == "" ? "" : parentPath + delimiter;
 		for (auto value : mInternalData)
 		{
-			if (value.first._Starts_with(prefix))
+			// if (value.first._Starts_with(prefix))
+			if( StringExtensions::startsWith(value.first, prefix))
 			{
 				int index = static_cast<int>(value.first.find_first_of(delimiter, prefix.size()));
 				if (index < 0)

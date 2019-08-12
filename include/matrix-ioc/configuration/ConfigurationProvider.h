@@ -3,7 +3,6 @@
 
 #include <map>
 
-using std::map;
 
 namespace Matrix
 {
@@ -13,16 +12,16 @@ namespace Matrix
 		
 		virtual void load() override;
 
-		virtual void save(shared_ptr<IConfiguration> configuration) override;
+		virtual void save(std::shared_ptr<IConfiguration> configuration) override;
 
-		virtual bool tryGet(string key, string& value, string defaultValue = "") override;
+		virtual bool tryGet(std::string key, std::string& value, std::string defaultValue = "") override;
 
-		virtual IConfigurationProvider& set(string key, string value) override;
+		virtual IConfigurationProvider& set(std::string key, std::string value) override;
 
-		virtual vector<string> getChildKeys(vector<string> earlierKeys, string parentPath, string delimiter) override;
+		virtual std::vector<std::string> getChildKeys(std::vector<std::string> earlierKeys, std::string parentPath, std::string delimiter) override;
 
 	private:
-		map<string, string> mInternalData;
+		std::map<std::string, std::string> mInternalData;
 	};
 
 }

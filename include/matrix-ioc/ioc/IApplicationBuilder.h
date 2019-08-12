@@ -47,9 +47,9 @@ namespace Matrix
 			return *this;
 		}
 
-		virtual vector<std::shared_ptr<IComponent>>& getComponents() = 0;
+		virtual std::vector<std::shared_ptr<IComponent>>& getComponents() = 0;
 
-		virtual vector<std::shared_ptr<IApplicationStartBlock>>& getBlocks() = 0;
+		virtual std::vector<std::shared_ptr<IApplicationStartBlock>>& getBlocks() = 0;
 
 	protected:
 		virtual IApplicationBuilder& registerComponent(std::shared_ptr<IComponent> component) = 0;
