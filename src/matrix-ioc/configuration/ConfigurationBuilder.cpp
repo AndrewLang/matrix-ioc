@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "ConfigurationBuilder.h"
 #include "ConfigurationRoot.h"
 

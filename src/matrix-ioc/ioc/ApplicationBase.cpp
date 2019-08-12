@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "ApplicationBase.h"
 #include "ServiceContainer.h"
 #include "../logging/ILoggerFactory.h"

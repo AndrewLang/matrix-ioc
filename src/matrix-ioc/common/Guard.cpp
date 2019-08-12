@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "Guard.h"
 #include "StringExtensions.h"
 

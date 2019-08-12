@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "MemoryConfigurationProvider.h"
 
 namespace Matrix

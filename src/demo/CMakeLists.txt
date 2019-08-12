@@ -1,12 +1,11 @@
 ﻿
-include_directories(${CMAKE_SOURCE_DIR}/include)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/common)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/configuration)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/ioc)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/logging)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/pipeline)
-include_directories(${CMAKE_SOURCE_DIR}/src/matrix-ioc/task)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/common)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/configuration)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/ioc)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/logging)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/pipeline)
+include_directories(${CMAKE_SOURCE_DIR}/include/matrix-ioc/task)
 
 message(STATUS ${CMAKE_SOURCE_DIR}/src/matrix-ioc)
 

@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "ConsoleLogger.h"
 #include "LogLevelConverter.h"
 

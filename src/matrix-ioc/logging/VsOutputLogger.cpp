@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+
 #include "VsOutputLogger.h"
 #include "VsOutput.h"
 #include "../common/StringExtensions.h"
