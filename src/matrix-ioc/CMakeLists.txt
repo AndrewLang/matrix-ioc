@@ -1,8 +1,5 @@
 ﻿
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
-
-
 message(STATUS "Source Dir: " ${CMAKE_SOURCE_DIR})
 
 project(matrix-ioc)

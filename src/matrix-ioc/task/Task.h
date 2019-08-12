@@ -4,18 +4,13 @@
 #include <future>
 #include <memory>
 
-using std::function;
-using std::string;
-using std::future;
-using std::async;
-using std::shared_ptr;
 
 namespace Connectivity
 {
-	using Action = function<void()>;
+	using Action = std::function<void()>;
 
 	template<class... TArgs>
-	using ActionT = function<void(TArgs&&... args)>;
+	using ActionT = std::function<void(TArgs&&... args)>;
 		
 		
 	class Task
@@ -27,25 +22,25 @@ namespace Connectivity
 
 		~Task();
 
-		static shared_ptr<Task> delay(const long milliseconds, const string & name = "delay");
+		static std::shared_ptr<Task> delay(const long milliseconds, const std::string & name = "delay");
 
 		static void waitAll(std::initializer_list<Task> tasks);
 
-		static shared_ptr<Task> tryDo(Action action, const int& count = 10, const int& delayInMilliseconds = 1000);
+		static std::shared_ptr<Task> tryDo(Action action, const int& count = 10, const int& delayInMilliseconds = 1000);
 
-		static shared_ptr<Task> execute(Action action);
+		static std::shared_ptr<Task> execute(Action action);
 		
 		Task& start();
 
 		Task& wait();
 
-		Task& withName(const string &  taskName);
+		Task& withName(const std::string &  taskName);
 
-		string name;
+		std::string name;
 
 	private:
 		Action mAction;
-		future<void> mFuture;
+		std::future<void> mFuture;
 	};
 	
 }

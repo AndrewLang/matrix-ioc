@@ -8,11 +8,14 @@
 #include <sstream>
 #include <chrono>
 
-using namespace std;
-using namespace std::chrono;
+
 
 namespace Matrix
 {
+	using namespace std;
+	using namespace std::chrono;
+
+
 	ConsoleLogger::ConsoleLogger(const std::string & loggerName)
 	{
 		name = loggerName;

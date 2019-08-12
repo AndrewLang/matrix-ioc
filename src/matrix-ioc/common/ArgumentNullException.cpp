@@ -1,9 +1,12 @@
-#include "../stdafx.h"
+
 #include "ArgumentNullException.h"
 #include "TextFormatter.h"
 
 namespace Matrix
 {
+	using std::string;
+
+
 	ArgumentNullException::ArgumentNullException(const string argument)
 		:mArgument(argument)
 	{

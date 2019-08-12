@@ -6,19 +6,17 @@
 
 #include <vector>
 
-using std::vector;
-
 namespace Matrix
 {
 	class Pipeline : public IPipeline
 	{
 	public:
-		Pipeline(vector<shared_ptr<IPipelineBlock>> blocks, shared_ptr<ILoggerFactory> loggerFactory);
+		Pipeline(std::vector<std::shared_ptr<IPipelineBlock>> blocks, std::shared_ptr<ILoggerFactory> loggerFactory);
 
 		virtual void process(PipelineContext& context) override;
 	private:
-		vector<shared_ptr<IPipelineBlock>> mBlocks;
-		shared_ptr<ILogger> mLogger;
+		std::vector<std::shared_ptr<IPipelineBlock>> mBlocks;
+		std::shared_ptr<ILogger> mLogger;
 	};
 
 }

@@ -7,13 +7,13 @@ namespace Matrix
 	{
 	public:
 		template<typename TReturn>
-		static void notNull(TReturn arg, const string& name);
+		static void notNull(TReturn arg, const std::string& name);
 
-		static void notEmpty(const string& value, const string& name);
+		static void notEmpty(const std::string& value, const std::string& name);
 	};
 
 	template<typename TReturn>
-	inline void Guard::notNull(TReturn arg, const string& name)
+	inline void Guard::notNull(TReturn arg, const std::string& name)
 	{
 		if (!arg)
 			throw ArgumentNullException(name);

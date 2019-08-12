@@ -6,10 +6,10 @@
 #include <string>
 #include <any>
 
-using std::shared_ptr;
-using std::map;
-using std::string;
-using std::any;
+//using std::shared_ptr;
+//using std::map;
+//using std::string;
+//using std::any;
 
 namespace Matrix
 {
@@ -47,7 +47,7 @@ namespace Matrix
 
 		int size();
 	private:
-		map<TReturn, shared_ptr<MapValueDescritor>> internalMap;
+		std::map<TReturn, std::shared_ptr<MapValueDescritor>> internalMap;
 	};
 
 

@@ -4,6 +4,9 @@
 
 namespace Matrix
 {
+	using std::chrono::high_resolution_clock;
+	using std::chrono::nanoseconds;
+	using std::string;
 
 	Stopwatch::Stopwatch()
 	{

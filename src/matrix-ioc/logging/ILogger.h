@@ -1,4 +1,5 @@
 #pragma once
+#include "../stdafx.h"
 #include "../common/TextFormatter.h"
 #include "../common/StringExtensions.h"
 #include "LogMessageName.h"
@@ -6,8 +7,6 @@
 #include <string>
 #include <map>
 #include <functional>
-
-using std::string;
 
 
 namespace Matrix
@@ -25,28 +24,28 @@ namespace Matrix
 		None
 	};
 
-	class ILogger
+	class EXPORT_SYMBOL ILogger
 	{
 	public:
 		std::string name;
 
 		virtual bool isEnabled(LogLevel level) = 0;
 
-		virtual ILogger& log(LogLevel level, string message, int eveintId = 0, std::exception* exception = nullptr, TextFormatter formatter = TextFormatter::DefaultTextFormatter()) = 0;
+		virtual ILogger& log(LogLevel level, std::string message, int eveintId = 0, std::exception* exception = nullptr, TextFormatter formatter = TextFormatter::DefaultTextFormatter()) = 0;
 
-		virtual ILogger& debug(string message) = 0;
+		virtual ILogger& debug(std::string message) = 0;
 
-		virtual ILogger& trace(string message) = 0;
+		virtual ILogger& trace(std::string message) = 0;
 
-		virtual ILogger& info(string message) = 0;
+		virtual ILogger& info(std::string message) = 0;
 
-		virtual ILogger& warning(string message) = 0;
+		virtual ILogger& warning(std::string message) = 0;
 
-		virtual ILogger& error(string message) = 0;
+		virtual ILogger& error(std::string message) = 0;
 
-		virtual ILogger& fatal(string message) = 0;
+		virtual ILogger& fatal(std::string message) = 0;
 
-		ILogger& startGroup(string group)
+		ILogger& startGroup(std::string group)
 		{
 			mGroupName = group;
 			return *this;
@@ -213,12 +212,12 @@ namespace Matrix
 		}
 
 	private:
-		string mGroupName = "";
+		std::string mGroupName = "";
 		bool mGroupNameLogged = false;
 
 
 		template< typename TReturn >
-		string format(const TReturn& text)
+		std::string format(const TReturn& text)
 		{
 			std::stringstream stream;
 			stream << text << SPACE;
@@ -226,20 +225,20 @@ namespace Matrix
 		}
 
 		template< typename TReturn, typename ... Args >
-		string format(const TReturn& first, Args ... args)
+		std::string format(const TReturn& first, Args ... args)
 		{
 			return format(first) + format(args...);
 		}
 
 		template< typename ... Args >
-		string buildMessage(N name, Args ... args)
+		std::string buildMessage(N name, Args ... args)
 		{
-			string title = StringExtensions::paddingString(name.getName());
-			return StringExtensions::isNullOrEmpty(mGroupName) ? format(title, args...) : Tab + format(title, args...);
+			std::string title = StringExtensions::paddingString(name.getName());
+			return StringExtensions::isNullOrEmpty(mGroupName) ? format(title, args...) : StringExtensions::Tab + format(title, args...);
 		}
 
 	protected:
-		inline static const string Tab = "\t";
+		
 
 	};
 }

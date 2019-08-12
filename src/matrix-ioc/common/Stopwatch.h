@@ -4,11 +4,6 @@
 #include <sstream>
 
 
-using std::chrono::time_point;
-using std::chrono::nanoseconds;
-using std::chrono::high_resolution_clock;
-using std::string;
-
 namespace Matrix
 {
 	class Stopwatch
@@ -30,11 +25,11 @@ namespace Matrix
 
 		bool isRunning();
 
-		string format();
+		std::string format();
 
 	private:
-		time_point<high_resolution_clock> mStart;
-		nanoseconds mDuration = nanoseconds::zero();
+		std::chrono::time_point<std::chrono::high_resolution_clock> mStart;
+		std::chrono::nanoseconds mDuration = std::chrono::nanoseconds::zero();
 		bool mIsRunning = false;
 	};
 

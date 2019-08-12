@@ -3,6 +3,8 @@
 
 namespace Matrix
 {
+	using std::string;
+
 	BaseException::BaseException()
 	{
 	}

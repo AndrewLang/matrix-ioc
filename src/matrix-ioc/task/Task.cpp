@@ -3,6 +3,10 @@
 
 namespace Connectivity
 {
+	using std::string;
+	using std::shared_ptr;
+
+
 	Task::Task(Action action)
 		: mAction(action)
 	{

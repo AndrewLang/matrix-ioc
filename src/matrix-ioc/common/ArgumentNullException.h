@@ -1,4 +1,5 @@
 #pragma once
+
 #include "BaseException.h"
 
 namespace Matrix
@@ -6,13 +7,13 @@ namespace Matrix
 	class ArgumentNullException : public BaseException
 	{
 	public:
-		ArgumentNullException(const string argument);
+		ArgumentNullException(const std::string argument);
 		
-		string getArgument() const;
+		std::string getArgument() const;
 	private :
-		const string mArgument;
+		const std::string mArgument;
 
 	protected:
-		string buildMessage() const override ;
+		std::string buildMessage() const override ;
 	};
 }

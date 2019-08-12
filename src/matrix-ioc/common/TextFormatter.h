@@ -2,11 +2,9 @@
 #include <string>
 #include <sstream>
 
-using std::string;
-
 namespace Matrix
 {
-	const static string SPACE = " ";
+	const static std::string SPACE = " ";
 
 	class TextFormatter
 	{
@@ -15,7 +13,7 @@ namespace Matrix
 		
 
 		template< typename TReturn >
-		string format(const TReturn& text)
+		std::string format(const TReturn& text)
 		{
 			std::stringstream stream;
 			stream << text << SPACE;
@@ -23,7 +21,7 @@ namespace Matrix
 		}
 
 		template< typename TReturn, typename ... Args >
-		string format(const TReturn& first, Args ... args)
+		std::string format(const TReturn& first, Args ... args)
 		{
 			return format(first) + format(args...);
 		}

@@ -4,12 +4,12 @@
 
 namespace Matrix
 {
-	FileNotExistsException::FileNotExistsException(const string& file)
+	FileNotExistsException::FileNotExistsException(const std::string& file)
 		: mFile(file)
 	{
 	}
 
-	string FileNotExistsException::buildMessage() const
+	std::string FileNotExistsException::buildMessage() const
 	{
 		TextFormatter formatter;
 		return formatter.format("File: '", mFile, "' is NOT found.");

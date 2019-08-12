@@ -5,6 +5,10 @@
 
 namespace Matrix
 {
+	using std::shared_ptr;
+	using std::vector;
+
+
 	PipelineBuilder::PipelineBuilder(shared_ptr<IServiceProvider> serviceProvider)
 		:mServiceProvider(serviceProvider)
 	{

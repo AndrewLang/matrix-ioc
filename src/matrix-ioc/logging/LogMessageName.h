@@ -1,20 +1,19 @@
 #pragma once
 #include <string>
 
-using std::string;
 
 namespace Matrix
 {
 	class LogMessageName
 	{
 	public:
-		LogMessageName(string name) : mName(name) {}
+		LogMessageName(std::string name) : mName(name) {}
 
-		string getName() {
+		std::string getName() {
 			return mName;
 		}
 
 	private:
-		string mName;
+		std::string mName;
 	};
 }

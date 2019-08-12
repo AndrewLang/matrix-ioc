@@ -5,9 +5,6 @@
 
 #include <functional>
 
-using std::function;
-using std::string;
-using std::shared_ptr;
 
 namespace Matrix
 {
@@ -15,15 +12,15 @@ namespace Matrix
 	class PipelineBlock : public IPipelineBlock
 	{
 	public:
-		PipelineBlock(function<void(PipelineContext&)>& action, shared_ptr<ILoggerFactory> loggerFactory, string blockName, int blockOrrder = 100);
+		PipelineBlock(std::function<void(PipelineContext&)>& action, std::shared_ptr<ILoggerFactory> loggerFactory, std::string blockName, int blockOrrder = 100);
 
 		~PipelineBlock();
 
 		virtual void process(PipelineContext & context) override;
 
 	private:
-		function<void(PipelineContext&)> mAction;
-		shared_ptr<ILogger> mLogger;
+		std::function<void(PipelineContext&)> mAction;
+		std::shared_ptr<ILogger> mLogger;
 	};
 }
 

@@ -1,14 +1,13 @@
 #pragma once
 #include <memory>
 
-using std::shared_ptr;
 
 namespace Matrix
 {
 	class MapValueDescritor
 	{
 	public:
-		shared_ptr<void> value;
+		std::shared_ptr<void> value;
 	};
 
 }

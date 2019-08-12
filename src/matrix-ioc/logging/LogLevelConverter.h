@@ -15,12 +15,6 @@ namespace Matrix
 
 		std::string toString(LogLevel level);
 
-		/*static LogLevelConverter& Instance()
-		{
-			static LogLevelConverter instance;
-			return instance;
-		}*/
-
 	private:	
 
 		std::map<LogLevel, std::string> mValues;

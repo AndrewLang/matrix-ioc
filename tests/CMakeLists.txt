@@ -5,7 +5,6 @@ find_package(Threads REQUIRED)
 
 
 # Get GTest source and binary directories from CMake project
-# ExternalProject_Get_Property(gtest source_dir binary_dir)
 
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .

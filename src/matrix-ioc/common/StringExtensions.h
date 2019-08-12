@@ -1,5 +1,5 @@
 #pragma once
-
+#include "../stdafx.h"
 
 #include <string>
 #include <vector>
@@ -14,27 +14,23 @@
 #include <iomanip>
 #include <chrono>
 
-using std::vector;
-using std::string;
-using std::wstring;
-using std::set;
-using std::chrono::system_clock;
 
 namespace Matrix
 {
-	class StringExtensions
+	class EXPORT_SYMBOL StringExtensions
 	{
 	public:
 		const static int Padding = 25;
 		const static char PaddingChar = ' ';
-		const static string NewLine;
+		const static std::string NewLine;
+		const static std::string Tab;
 
-		static vector<string> split(const string& value, const char& delimiter = ' ')
+		static std::vector<std::string> split(const std::string& value, const char& delimiter = ' ')
 		{
-			vector<string> result;
+			std::vector<std::string> result;
 
 			std::stringstream stream(value);
-			string segment;
+			std::string segment;
 			while (std::getline(stream, segment, delimiter))
 			{
 				result.push_back(segment);
@@ -42,11 +38,11 @@ namespace Matrix
 			return result;
 		}
 
-		static vector<string> split( const string& value , const string delimiters)
+		static std::vector<std::string> split( const std::string& value , const std::string delimiters)
 		{
-			vector<string> result;
+			std::vector<std::string> result;
 
-			std::function isDelimiter = [](const string& delimiters, char c)
+			std::function isDelimiter = [](const std::string& delimiters, char c)
 			{
 				for (auto cValue : delimiters)
 				{
@@ -57,7 +53,7 @@ namespace Matrix
 			};
 
 			std::stringstream stringStream(value);
-			string word; 
+			std::string word; 
 			char c;
 			
 
@@ -80,12 +76,12 @@ namespace Matrix
 			return result;
 		}
 		
-		static string replace(const string& original, const string& toBeReplace, const string& value)
+		static std::string replace(const std::string& original, const std::string& toBeReplace, const std::string& value)
 		{
-			string result = original;
+			std::string result = original;
 			size_t pos = result.find(toBeReplace);
 
-			while (pos != string::npos)
+			while (pos != std::string::npos)
 			{
 				result.replace(pos, toBeReplace.size(), value);
 				pos = result.find(toBeReplace, pos + value.size());
@@ -93,7 +89,7 @@ namespace Matrix
 			return result;
 		}
 
-		static bool compareIgnoreCase(const string& first, const string& second)
+		static bool compareIgnoreCase(const std::string& first, const std::string& second)
 		{
 			if (first.length() == second.length())
 			{
@@ -105,29 +101,29 @@ namespace Matrix
 			}
 		}
 
-		static bool isNullOrEmpty(const string& value)
+		static bool isNullOrEmpty(const std::string& value)
 		{
 			return value.length() <= 0;
 		}
 
-		static int indexOf(const string& text, const char& value)
+		static int indexOf(const std::string& text, const char& value)
 		{
 			return static_cast<int>(text.find_first_of(value, 0));
 		}
 
-		static int indexOf(const string& text, const string& value)
+		static int indexOf(const std::string& text, const std::string& value)
 		{
 			return static_cast<int>(text.find(value, 0));
 		}
 
-		static string textBetween(const string& text, const char& start, const char& end)
+		static std::string textBetween(const std::string& text, const char& start, const char& end)
 		{
 			int startIndex = indexOf(text, start);
 			int endIndex = indexOf(text, end);
 			return text.substr(startIndex + 1, endIndex - startIndex - 1);
 		}
 
-		static string literalString(const string& value)
+		static std::string literalString(const std::string& value)
 		{
 			if (isNullOrEmpty(value))
 				return value;
@@ -135,13 +131,13 @@ namespace Matrix
 			return replace(value, "\\", R"(\\)");
 		}
 
-		static string toLower(const string& value)
+		static std::string toLower(const std::string& value)
 		{
 			if (isNullOrEmpty(value))
 				return value;
 
-			string literal = value;// literalString(value);
-			string result;
+			std::string literal = value;// literalstd::string(value);
+			std::string result;
 			result.resize(literal.size());
 			std::transform(literal.begin(), literal.end(), result.begin(), [](unsigned char c) {
 				return std::tolower(c);
@@ -150,12 +146,12 @@ namespace Matrix
 			return result;
 		}
 
-		static string toUpper(const string& value)
+		static std::string toUpper(const std::string& value)
 		{
 			if (isNullOrEmpty(value))
 				return value;
 
-			string result;
+			std::string result;
 			result.resize(value.size());
 			std::transform(value.begin(), value.end(), result.begin(), [](unsigned char c) {
 				return std::toupper(c);
@@ -164,7 +160,7 @@ namespace Matrix
 			return result;
 		}
 
-		static int parseHex(const string& value)
+		static int parseHex(const std::string& value)
 		{
 			std::stringstream stream;
 			stream << std::hex << value;
@@ -175,14 +171,14 @@ namespace Matrix
 		}
 
 		template<typename TReturn>
-		static TReturn convertTo(const string & value)
+		static TReturn convertTo(const std::string & value)
 		{
-			std::istringstream stream(value);
+			std::istd::stringstream stream(value);
 			TReturn target;
 
-			if (typeid(TReturn) == typeid(string))
+			if (typeid(TReturn) == typeid(std::string))
 			{
-				for (int i = 0; i < StringExtensions::split(value).size(); i++)
+				for (int i = 0; i < std::stringExtensions::split(value).size(); i++)
 				{
 					TReturn tempValue;
 					stream >> tempValue;
@@ -199,20 +195,20 @@ namespace Matrix
 			return target;
 		}
 
-		static wstring toWString(const string& value)
+		static std::wstring toWString(const std::string& value)
 		{
 			std::wstringstream stream;
 			stream << value.c_str();
 			return stream.str();
 		}
 
-		static string toString(const wstring& value)
+		static std::string toString(const std::wstring& value)
 		{
-			string result(value.begin(), value.end());
+			std::string result(value.begin(), value.end());
 			return result;
 		}
 
-		static bool endsWith(const string& full, const string& end)
+		static bool endsWith(const std::string& full, const std::string& end)
 		{
 			if (full.length() >= end.length()) {
 				return (0 == full.compare(full.length() - end.length(), end.length(), end));
@@ -222,12 +218,12 @@ namespace Matrix
 			}
 		}
 
-		static bool endsWith(const string& full, const char& end)
+		static bool endsWith(const std::string& full, const char& end)
 		{
-			return endsWith(full, string(1, end));
+			return endsWith(full, std::string(1, end));
 		}
 
-		static bool startsWith(const string& full, const string& start)
+		static bool startsWith(const std::string& full, const std::string& start)
 		{
 			if (full.length() >= start.length()) {
 				return std::equal(start.begin(), start.end(), full.begin());				
@@ -237,12 +233,12 @@ namespace Matrix
 			}
 		}
 
-		static bool startsWith(const string& full, const char& start)
+		static bool startsWith(const std::string& full, const char& start)
 		{
-			return startsWith(full, string(1, start));
+			return startsWith(full, std::string(1, start));
 		}
 
-		static string paddingString(const string& value, const char& paddingChar = PaddingChar, const int& padding = Padding)
+		static std::string paddingString(const std::string& value, const char& paddingChar = PaddingChar, const int& padding = Padding)
 		{
 			std::stringstream stream;
 			stream << std::left << std::setfill(paddingChar) << std::setw(padding) << value;
@@ -250,12 +246,12 @@ namespace Matrix
 			return stream.str();
 		}
 
-		static string wrapBySquare(const string& value)
+		static std::string wrapBySquare(const std::string& value)
 		{
 			return "[" + value + "]";
 		}
 
-		static string getTimestamp()
+		static std::string getTimestamp()
 		{
 			time_t rawtime;
 			struct tm timeinfo;

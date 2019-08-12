@@ -6,7 +6,7 @@ namespace Matrix
 	class IPipelineBlock
 	{
 	public:
-		string name;
+		std::string name;
 
 		int order;
 

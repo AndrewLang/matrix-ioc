@@ -10,8 +10,6 @@
 #include "../common/TextFormatter.h"
 #include "../common/StringExtensions.h"
 
-using std::chrono::system_clock;
-using std::string;
 
 namespace Matrix
 {
@@ -42,7 +40,7 @@ namespace Matrix
 		}
 
 		template<typename ... Args >
-		static void writeWithName(string name, Args&& ... args)
+		static void writeWithName(std::string name, Args&& ... args)
 		{
 			TextFormatter formatter;
 			auto message = StringExtensions::wrapBySquare(StringExtensions::getTimestamp())
@@ -57,13 +55,12 @@ namespace Matrix
 
 	private:
 
-		inline static void logMessage(string message)
+		inline static void logMessage(std::string message)
 		{			
 			LPCTSTR lp = message.c_str(); 
 
 			OutputDebugString(lp);
 		}
-
 	};
 
 

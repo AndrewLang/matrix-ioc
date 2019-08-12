@@ -3,6 +3,10 @@
 
 namespace Matrix
 {
+	using std::shared_ptr;
+	using std::function;
+	using std::string;
+
 	ApplicationStartBlock::ApplicationStartBlock(function<void(ApplicationStartBlockContext&)>& action, shared_ptr<ILoggerFactory> loggerFactory, string blockName, int blockOrrder)
 		: mAction(action)
 	{

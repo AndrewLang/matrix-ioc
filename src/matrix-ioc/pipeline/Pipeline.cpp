@@ -7,6 +7,10 @@
 
 namespace Matrix
 {
+	using std::vector;
+	using std::shared_ptr;
+	using std::string;
+
 	Pipeline::Pipeline(vector<shared_ptr<IPipelineBlock>> blocks, shared_ptr<ILoggerFactory> loggerFactory)
 		:mBlocks(blocks) {
 

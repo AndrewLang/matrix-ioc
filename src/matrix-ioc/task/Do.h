@@ -4,7 +4,6 @@
 #include <future>
 #include <chrono>
 
-using std::chrono::duration;
 
 namespace Matrix
 {
@@ -33,7 +32,7 @@ namespace Matrix
 				catch (...)
 				{
 					count++;
-					duration<int, std::milli> delay = std::chrono::milliseconds(mMilliseconds);
+					std::chrono::duration<int, std::milli> delay = std::chrono::milliseconds(mMilliseconds);
 					std::this_thread::sleep_for(delay);
 				}
 			}

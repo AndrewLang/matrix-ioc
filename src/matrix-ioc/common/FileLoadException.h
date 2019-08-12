@@ -6,13 +6,13 @@ namespace Matrix
 	class FileLoadException : public BaseException
 	{
 	public:
-		FileLoadException(const string fileName);
+		FileLoadException(const std::string fileName);
 
 	protected:
-		string buildMessage() const override;
+		std::string buildMessage() const override;
 
 	private: 
-		const string mFileName;
+		const std::string mFileName;
 	};
 
 }

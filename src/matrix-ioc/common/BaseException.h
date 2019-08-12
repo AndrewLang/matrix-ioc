@@ -1,16 +1,15 @@
 #pragma once
+#include "../stdafx.h"
 #include "TextFormatter.h"
 
 #include <exception>
 #include <string>
 
-using std::exception;
-using std::string;
 
 namespace Matrix
 {
-	// EXPORT_SYMBOL
-	class  BaseException : public exception
+	
+	class BaseException : public std::exception
 	{
 	public:
 		BaseException();
@@ -18,7 +17,7 @@ namespace Matrix
 		virtual char const * what() const;
 
 	protected:
-		virtual string buildMessage() const;
+		virtual std::string buildMessage() const;
 	};
 
 }

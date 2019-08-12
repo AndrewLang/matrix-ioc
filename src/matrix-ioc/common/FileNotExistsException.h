@@ -7,13 +7,13 @@ namespace Matrix
 	class FileNotExistsException : public BaseException
 	{
 	public:
-		FileNotExistsException(const string& file);
+		FileNotExistsException(const std::string& file);
 
 	protected:
-		string buildMessage() const override;
+		std::string buildMessage() const override;
 
 	private:
-		const string mFile;
+		const std::string mFile;
 	};
 
 }

@@ -3,6 +3,8 @@
 
 namespace Matrix
 {
+	using std::string;
+
 	FileLoadException::FileLoadException(const string fileName)
 		: mFileName(fileName)
 	{

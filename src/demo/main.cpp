@@ -1,17 +1,19 @@
 
 #include "main.h"
 #include "Do.h"
+#include "StringExtensions.h"
 
 using namespace std;
 using namespace Matrix;
 
 int main()
 {
-	cout << "IOC/DI Demo " << endl;
+	cout << "IOC/DI Demo App" << endl;
 
 	int tryCount = 0;
 	auto lambda = [&](int x) {
 		tryCount = x;
+		string line = StringExtensions::NewLine;
 	};
 
 	Do<std::function<void(int)>> action(lambda);
@@ -23,4 +25,5 @@ int main()
 	getchar();
 
 	return 0;
+
 }

@@ -3,6 +3,9 @@
 
 namespace Matrix
 {
+	using std::string;
+
+
 	LoggerBase::LoggerBase()
 	{
 	}

@@ -3,6 +3,9 @@
 
 namespace Matrix
 {
+	using std::function;
+	using std::shared_ptr;
+	using std::string;
 
 	PipelineBlock::PipelineBlock(function<void(PipelineContext&)>& action, shared_ptr<ILoggerFactory> loggerFactory, string blockName, int blockOrrder)
 		: mAction(action)

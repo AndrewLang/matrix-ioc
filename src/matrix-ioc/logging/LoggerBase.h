@@ -5,7 +5,7 @@
 
 namespace Matrix
 {
-	class LoggerBase :public ILogger
+	class EXPORT_SYMBOL LoggerBase :public ILogger
 	{
 	public:
 		LoggerBase();
@@ -14,24 +14,24 @@ namespace Matrix
 
 		bool isEnabled(LogLevel level) override;
 
-		ILogger& debug(string message) override;
+		ILogger& debug(std::string message) override;
 
-		ILogger& trace(string message) override;
+		ILogger& trace(std::string message) override;
 
-		ILogger& info(string message) override;
+		ILogger& info(std::string message) override;
 
-		ILogger& warning(string message) override;
+		ILogger& warning(std::string message) override;
 
-		ILogger& error(string message) override;
+		ILogger& error(std::string message) override;
 
-		ILogger& fatal(string message) override;
+		ILogger& fatal(std::string message) override;
 
 	protected:
 		std::string format(LogLevel level, std::string message, int eveintId = 0, std::exception* exception = nullptr, TextFormatter formatter = TextFormatter::DefaultTextFormatter());
 
 		LogLevelConverter mConverter;
 
-		string wrapText(string value);
+		std::string wrapText(std::string value);
 	};
 
 }

@@ -3,7 +3,7 @@
 
 namespace Matrix
 {
-	class ConsoleLogger :public LoggerBase
+	class EXPORT_SYMBOL ConsoleLogger :public LoggerBase
 	{
 	public:
 		ILogger& log(LogLevel level, std::string message, int eveintId, std::exception* exception, TextFormatter formatter) override;

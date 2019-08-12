@@ -13,7 +13,7 @@ namespace Matrix
 	{
 	public:
 		InternalLogger(std::shared_ptr<ILoggerFactory> factory, std::string name);
-		//InternalLogger(ILoggerFactory* factory, std::string name);
+		
 		InternalLogger() = delete;
 		InternalLogger(const InternalLogger &) = delete;
 		InternalLogger& operator=(const InternalLogger&) = delete;
@@ -40,8 +40,7 @@ namespace Matrix
 
 	private:
 		std::shared_ptr<ILoggerFactory> mFactory;
-		//ILoggerFactory* mFactory;
-
+		
 		std::vector<std::shared_ptr<ILogger>> mLoggers;
 
 		void initialize();

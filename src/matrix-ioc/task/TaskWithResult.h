@@ -3,15 +3,12 @@
 #include <string>
 #include <future>
 
-using std::function;
-using std::string;
-using std::future;
-using std::async;
+
 
 namespace Connectivity
 {
 	template<class TReturn, class... TArgs>
-	using Func = function<TReturn(TArgs&&... args)>;
+	using Func = std::function<TReturn(TArgs&&... args)>;
 
 
 	template<class TReturn, class TFunction>
@@ -31,13 +28,13 @@ namespace Connectivity
 			return *this;
 		}
 
-		TaskWithResult<TReturn, TFunction>& withName(const string & taskName);
+		TaskWithResult<TReturn, TFunction>& withName(const std::string & taskName);
 
-		string name;
+		std::string name;
 
 	private:
 		TFunction mFunction;
-		future<TReturn> mFuture;
+		std::future<TReturn> mFuture;
 	};
 
 	template<class TReturn, class TFunction>
@@ -58,7 +55,7 @@ namespace Connectivity
 	}
 
 	template<class TReturn, class TFunction>
-	inline TaskWithResult<TReturn, TFunction>& TaskWithResult<TReturn, TFunction>::withName(const string & taskName)
+	inline TaskWithResult<TReturn, TFunction>& TaskWithResult<TReturn, TFunction>::withName(const std::string & taskName)
 	{
 		name = taskName;
 		return *this;
