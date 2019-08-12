@@ -1,12 +1,12 @@
 #pragma once
-#include "../stdafx.h"
+
 #include <typeinfo>
 #include <atomic>
 #include <string>
 
 namespace Matrix
 {
-	class EXPORT_SYMBOL TypeInfo
+	class EXPORT TypeInfo
 	{
 	public:
 		const std::type_info* rawType;

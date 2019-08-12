@@ -13,7 +13,9 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 project(demo)
 
+add_executable(${PROJECT_NAME} main.cpp main.h)
 
-add_executable(${PROJECT_NAME} main.cpp main.h )
+target_link_libraries(${PROJECT_NAME} matrix-ioc)
 
-# target_link_libraries(${PROJECT_NAME} matrix-ioc.lib)
+# add_precompiled_header(${PROJECT_NAME} pch.h SOURCE_CXX pch.cpp FORCEINCLUDE)
+

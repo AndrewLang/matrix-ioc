@@ -6,11 +6,6 @@
 #include <string>
 #include <any>
 
-//using std::shared_ptr;
-//using std::map;
-//using std::string;
-//using std::any;
-
 namespace Matrix
 {
 	template<class TReturn>

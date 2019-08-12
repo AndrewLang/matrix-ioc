@@ -1,4 +1,4 @@
-
+#include "stdafx.h"
 #include "PipelineBuilder.h"
 #include "PipelineBlock.h"
 #include "Pipeline.h"

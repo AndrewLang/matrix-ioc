@@ -1,9 +1,11 @@
 #pragma once
+#include "../stdafx.h"
+
 #include "LoggerBase.h"
 
 namespace Matrix
 {
-	class EXPORT_SYMBOL ConsoleLogger :public LoggerBase
+	class EXPORT ConsoleLogger :public LoggerBase
 	{
 	public:
 		ILogger& log(LogLevel level, std::string message, int eveintId, std::exception* exception, TextFormatter formatter) override;

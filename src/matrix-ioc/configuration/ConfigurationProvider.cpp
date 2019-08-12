@@ -1,4 +1,4 @@
-
+#include "stdafx.h"
 #include "ConfigurationProvider.h"
 #include "StringExtensions.h"
 

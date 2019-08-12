@@ -1,5 +1,5 @@
 #pragma once
-#include "../stdafx.h"
+
 #include "TypeInfo.h"
 
 #include <map>
@@ -7,7 +7,7 @@
 namespace Matrix
 {
 	template<class TReturn>
-	class EXPORT_SYMBOL TypeMap
+	class EXPORT TypeMap
 	{
 	public:
 		void add(const TypeInfo* type, TReturn value);

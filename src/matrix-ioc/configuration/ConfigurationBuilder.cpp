@@ -1,9 +1,11 @@
-
+#include "stdafx.h"
 #include "ConfigurationBuilder.h"
 #include "ConfigurationRoot.h"
 
 namespace Matrix
 {
+	using std::shared_ptr;
+
 	ConfigurationBuilder::ConfigurationBuilder()
 	{
 	}

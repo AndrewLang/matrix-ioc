@@ -1,4 +1,4 @@
-
+#include "stdafx.h"
 #include "CancellationToken.h"
 
 namespace Connectivity

@@ -1,8 +1,8 @@
-
+#include "stdafx.h"
 #include "StringExtensions.h"
 
 namespace Matrix
 {
 	const std::string StringExtensions::NewLine = "\n";
-	const std::string StringExtensions::Tab = "\t";
+	const std::string StringExtensions::Tab = "\t";	
 }

@@ -17,6 +17,7 @@ project(matrix-ioc)
 
 SET(HeaderFiles 
 	pch.h
+	${CMAKE_SOURCE_DIR}/include/matrix-ioc/common/StringExtensions.h
 	)
 
 

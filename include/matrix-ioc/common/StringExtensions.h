@@ -17,13 +17,14 @@
 
 namespace Matrix
 {
-	class StringExtensions
+	class EXPORT StringExtensions
 	{
 	public:
 		const static int Padding = 25;
 		const static char PaddingChar = ' ';
 		const static std::string NewLine;
 		const static std::string Tab;
+		
 
 		static std::vector<std::string> split(const std::string& value, const char& delimiter = ' ')
 		{

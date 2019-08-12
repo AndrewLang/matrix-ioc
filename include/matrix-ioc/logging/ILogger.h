@@ -24,7 +24,7 @@ namespace Matrix
 		None
 	};
 
-	class EXPORT_SYMBOL ILogger
+	class EXPORT ILogger
 	{
 	public:
 		std::string name;

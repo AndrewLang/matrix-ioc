@@ -1,4 +1,4 @@
-
+#include "stdafx.h"
 #include "ConsoleLogger.h"
 #include "LogLevelConverter.h"
 
@@ -37,9 +37,8 @@ namespace Matrix
 	ILogger & ConsoleLogger::log(LogLevel level, std::string message, int eveintId, std::exception* exception, TextFormatter formatter)
 	{
 		auto text = format(level, message, eveintId, exception, formatter);
-
-		LogLevelConverter converter;
-		cout << wrapText(now()) << wrapText(name) << wrapText(converter.toString(level)) << text << "\n";
+				
+		cout << wrapText(now()) << wrapText(name) << text << "\n";
 
 		return *this;
 	}
@@ -64,7 +63,10 @@ namespace Matrix
 
 	std::string ConsoleLogger::wrapText(std::string text)
 	{
-		return "[" + text + "] ";
+		if (text != "")
+			return "[" + text + "] ";
+		else
+			return "";
 	}
 
 }

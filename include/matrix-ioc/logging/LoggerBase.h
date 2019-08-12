@@ -1,11 +1,13 @@
 #pragma once
+#include "../stdafx.h"
+
 #include "ILogger.h"
 #include "LogLevelConverter.h"
 
 
 namespace Matrix
 {
-	class EXPORT_SYMBOL LoggerBase :public ILogger
+	class EXPORT LoggerBase :public ILogger
 	{
 	public:
 		LoggerBase();
