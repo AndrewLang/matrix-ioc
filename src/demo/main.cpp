@@ -1,9 +1,10 @@
 
 #include "main.h"
-#include "Do.h"
-#include "ConsoleLogger.h"
-#include "StringExtensions.h"
-#include "TextFormatter.h"
+#include "task/Do.h"
+#include "logging/ConsoleLogger.h"
+#include "common/StringExtensions.h"
+#include "common/TextFormatter.h"
+#include "common/ArgumentNullException.h"
 
 using namespace std;
 using namespace Matrix;
@@ -16,6 +17,10 @@ int main()
 	string space = SPACE;
 	int padding = StringExtensions::Padding;
 	char paddingChar = StringExtensions::PaddingChar;
+
+	ArgumentNullException exception("");
+
+	// string tab = Matrix::StringExtensions::Tab;
 
 	int tryCount = 0;
 	auto lambda = [&](int x) {
@@ -35,6 +40,9 @@ int main()
 	ConsoleLogger logger("main logger");
 
 	logger.debug("demo application");
+		//.info("");
+
+	
 
 	getchar();
 
