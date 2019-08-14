@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "Do.h"
+#include "task/Do.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(DoTests, Constructor) {
 		auto lambda = [](int x) {  };

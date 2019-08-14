@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
-#include "ServiceLifetime.h"
+#include "ioc/ServiceLifetime.h"
 #include "Circle.h"
 #include "Rectangle.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(FactoryTests, SharedInstanceFactoryTest) {
 		auto circle1 = sharedInstanceFactory<Circle>();

@@ -4,8 +4,7 @@
 #include <future>
 
 
-
-namespace Connectivity
+namespace Matrix
 {
 	template<class TReturn, class... TArgs>
 	using Func = std::function<TReturn(TArgs&&... args)>;

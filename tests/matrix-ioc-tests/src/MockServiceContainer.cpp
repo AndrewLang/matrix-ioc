@@ -1,6 +1,6 @@
 #include "MockServiceContainer.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	std::shared_ptr<void> MockServiceContainer::getService(const TypeInfo * typeInfo)
 	{

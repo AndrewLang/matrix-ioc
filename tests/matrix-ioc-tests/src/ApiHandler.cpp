@@ -1,6 +1,6 @@
 #include "ApiHandler.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	void ApiHandler::handle(std::string name)
 	{

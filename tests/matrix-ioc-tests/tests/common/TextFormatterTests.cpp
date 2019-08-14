@@ -1,8 +1,8 @@
-#include "pch.h"
-#include "gtest/gtest.h"
-#include "TextFormatter.h"
 
-namespace Connectivity
+#include "gtest/gtest.h"
+#include "common/TextFormatter.h"
+
+namespace Matrix
 {
 
 	TEST(TextFormatterTest, DefaultFormatter)
@@ -17,7 +17,7 @@ namespace Connectivity
 		std::string expect = "hello world";
 		auto actual = formatter.format(expect);
 
-		EXPECT_EQ(expect + Connectivity::SPACE, actual);
+		EXPECT_EQ(expect + Matrix::SPACE, actual);
 	}
 
 	TEST(TextFormatterTest, FormatMultiple)
@@ -28,6 +28,6 @@ namespace Connectivity
 
 		auto actual = formatter.format(expect, expect1);
 
-		EXPECT_EQ(expect + Connectivity::SPACE + expect1 + Connectivity::SPACE, actual);
+		EXPECT_EQ(expect + Matrix::SPACE + expect1 + Matrix::SPACE, actual);
 	}
 }

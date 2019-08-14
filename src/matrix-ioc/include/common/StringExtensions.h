@@ -1,5 +1,4 @@
 #pragma once
-#include "../stdafx.h"
 
 #include <string>
 #include <vector>
@@ -17,14 +16,16 @@
 
 namespace Matrix
 {
-	class EXPORT StringExtensions
+	class StringExtensions
 	{
 	public:
 		const static int Padding = 25;
 		const static char PaddingChar = ' ';
-		const static std::string NewLine;
-		const static std::string Tab;
 		
+		
+		static constexpr const char* NewLine = "\n";
+		static constexpr const char* Tab = "\t";
+
 
 		static std::vector<std::string> split(const std::string& value, const char& delimiter = ' ')
 		{
@@ -174,12 +175,12 @@ namespace Matrix
 		template<typename TReturn>
 		static TReturn convertTo(const std::string & value)
 		{
-			std::istd::stringstream stream(value);
+			std::stringstream stream(value);
 			TReturn target;
 
 			if (typeid(TReturn) == typeid(std::string))
 			{
-				for (int i = 0; i < std::stringExtensions::split(value).size(); i++)
+				for (int i = 0; i < StringExtensions::split(value).size(); i++)
 				{
 					TReturn tempValue;
 					stream >> tempValue;

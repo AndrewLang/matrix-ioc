@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
-#include "ServiceDescriptor.h"
+#include "ioc/ServiceDescriptor.h"
 #include "Rectangle.h"
 #include "Circle.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(ServiceDescriptorTests, Constructor) {
 		ServiceDescriptor descriptor;

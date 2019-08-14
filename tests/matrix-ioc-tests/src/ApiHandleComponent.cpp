@@ -2,7 +2,7 @@
 #include "ApiHandler.h"
 
 
-namespace Connectivity
+namespace Matrix
 {
 
 	ApiHandleComponent::ApiHandleComponent()

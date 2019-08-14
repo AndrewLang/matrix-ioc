@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
-#include "TaskWithResult.h"
-#include "VsOutput.h"
+#include "task/TaskWithResult.h"
+#include "logging/VsOutput.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	template<class TReturn, class Function, class... TArgs>
 	TReturn TestFunc(Function func, TArgs&&... args) {

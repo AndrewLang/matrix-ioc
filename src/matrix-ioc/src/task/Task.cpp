@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "task/Task.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	using std::shared_ptr;

@@ -7,7 +7,7 @@
 
 namespace Matrix
 {
-	class EXPORT LoggerBase :public ILogger
+	class LoggerBase :public ILogger
 	{
 	public:
 		LoggerBase();

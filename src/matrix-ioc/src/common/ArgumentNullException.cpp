@@ -1,4 +1,3 @@
-//#include "stdafx.h"
 #include "common/ArgumentNullException.h"
 #include "common/TextFormatter.h"
 

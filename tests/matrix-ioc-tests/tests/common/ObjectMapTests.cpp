@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
-#include "ObjectMap.h"
+#include "common/ObjectMap.h"
 #include "Circle.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	TEST(ObjectMapTests, Constructor) {

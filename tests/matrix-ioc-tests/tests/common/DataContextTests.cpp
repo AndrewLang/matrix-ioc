@@ -1,12 +1,14 @@
 #include "gtest/gtest.h"
-#include "DataContext.h"
+#include "ioc/DataContext.h"
+#include "ioc/ServiceContainer.h"
 #include "Rectangle.h"
 #include "Circle.h"
-#include "ServiceContainer.h"
 
-namespace Connectivity
+
+namespace Matrix
 {
 	using std::string;
+
 	TEST(DataContextTests, Constructor) {
 		DataContext context;
 	}

@@ -1,9 +1,8 @@
-#include "pch.h"
 #include "gtest/gtest.h"
-#include "ConfigurationBuilder.h"
-#include "MemoryConfigurationProvider.h"
+#include "configuration/ConfigurationBuilder.h"
+#include "configuration/MemoryConfigurationProvider.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(ConfigurationBuilderTests, Constructor) {
 		ConfigurationBuilder builder;

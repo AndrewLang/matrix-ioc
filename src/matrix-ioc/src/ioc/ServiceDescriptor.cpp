@@ -1,4 +1,3 @@
-//#include "stdafx.h"
 #include "ioc/ServiceDescriptor.h"
 
 namespace Matrix

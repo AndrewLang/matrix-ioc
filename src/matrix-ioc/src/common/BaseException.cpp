@@ -1,4 +1,3 @@
-//#include "stdafx.h"
 #include "common/BaseException.h"
 
 namespace Matrix

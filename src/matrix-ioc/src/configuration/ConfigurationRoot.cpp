@@ -1,4 +1,3 @@
-// #include "stdafx.h"
 #include "configuration/ConfigurationRoot.h"
 
 #include <vector>

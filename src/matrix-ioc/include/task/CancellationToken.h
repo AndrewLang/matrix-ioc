@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Connectivity
+namespace Matrix
 {
 	class CancellationToken
 	{

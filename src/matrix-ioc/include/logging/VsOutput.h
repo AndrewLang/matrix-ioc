@@ -14,7 +14,7 @@
 
 namespace Matrix
 {
-	class EXPORT VsOutput
+	class VsOutput
 	{
 	public:
 

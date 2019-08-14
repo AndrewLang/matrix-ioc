@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "ArgumentNullException.h"
+#include "common/ArgumentNullException.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(ArgumentNullExceptionTests, Constructor) {
 		ArgumentNullException exception("test");

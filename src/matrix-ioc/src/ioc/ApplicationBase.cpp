@@ -13,6 +13,10 @@
 
 namespace Matrix
 {
+	using std::shared_ptr;
+	using std::vector;
+
+
 	IApplication& ApplicationBase::initializeComponents()
 	{
 		/*

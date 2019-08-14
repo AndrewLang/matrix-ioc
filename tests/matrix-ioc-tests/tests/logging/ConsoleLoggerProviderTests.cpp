@@ -1,9 +1,8 @@
-#include "pch.h"
 #include "gtest/gtest.h"
-#include "ConsoleLoggerProvider.h"
-#include "ILogger.h"
+#include "logging/ConsoleLoggerProvider.h"
+#include "logging/ILogger.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(ConsoleLoggerProviderTests, Constructor) {
 		ConsoleLoggerProvider provider;

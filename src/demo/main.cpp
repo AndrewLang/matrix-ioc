@@ -20,14 +20,11 @@ int main()
 
 	ArgumentNullException exception("");
 
-	// string tab = Matrix::StringExtensions::Tab;
+	string tab = Matrix::StringExtensions::Tab;
 
 	int tryCount = 0;
 	auto lambda = [&](int x) {
-		tryCount = x;
-		//string tab = StringExtensions::Tab;
-		//string line = StringExtensions::NewLine;
-		//cout << line << endl;
+		tryCount = x;		
 	};
 
 	Do<std::function<void(int)>> action(lambda);
@@ -39,8 +36,8 @@ int main()
 
 	ConsoleLogger logger("main logger");
 
-	logger.debug("demo application");
-		//.info("");
+	logger.debug("demo application")
+		.info("");
 
 	
 

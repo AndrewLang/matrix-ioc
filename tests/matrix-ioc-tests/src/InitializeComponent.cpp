@@ -1,7 +1,7 @@
 #include "InitializeComponent.h"
 
 
-namespace Connectivity
+namespace Matrix
 {
 
 	InitializeComponent::InitializeComponent()

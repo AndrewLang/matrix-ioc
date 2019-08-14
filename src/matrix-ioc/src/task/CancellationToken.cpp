@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "task/CancellationToken.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	CancellationToken::CancellationToken()
 	{

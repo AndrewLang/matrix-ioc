@@ -1,19 +1,19 @@
 #include "gtest/gtest.h"
-#include "ApplicationBase.h"
-#include "IApplication.h"
+#include "ioc/ApplicationBase.h"
+#include "ioc/IApplication.h"
 #include "MockApplication.h"
-#include "ILoggerFactory.h"
+#include "logging/ILoggerFactory.h"
 #include "ApiHandleComponent.h"
 #include "InitializeComponent.h"
 #include "IApiHandler.h"
-#include "ApplicationStartBlock.h"
-#include "LoggerFactory.h"
+#include "ioc/ApplicationStartBlock.h"
+#include "logging/LoggerFactory.h"
 
 
 
-namespace Connectivity
+namespace Matrix
 {
-	using Connectivity::ILoggerFactory;
+	using Matrix::ILoggerFactory;
 	using std::string;
 	using std::function;
 

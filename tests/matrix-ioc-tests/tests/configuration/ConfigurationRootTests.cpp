@@ -1,9 +1,9 @@
 #include "gtest/gtest.h"
-#include "ConfigurationRoot.h"
-#include "MemoryConfigurationProvider.h"
-#include "VsOutput.h"
+#include "configuration/ConfigurationRoot.h"
+#include "configuration/MemoryConfigurationProvider.h"
+#include "logging/VsOutput.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	using std::vector;

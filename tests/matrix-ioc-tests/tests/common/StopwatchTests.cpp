@@ -1,14 +1,17 @@
 #include "gtest/gtest.h"
-#include "Stopwatch.h"
-#include "VsOutput.h"
+#include "common/Stopwatch.h"
+#include "logging/VsOutput.h"
+
 #include <thread>
 #include <chrono>
 
-using std::thread;
-using namespace std;
 
-namespace Connectivity
+namespace Matrix
 {
+	using std::thread;
+	using namespace std;
+
+
 	TEST(StopwatchTests, Constructor) {
 		Stopwatch watch;
 	}

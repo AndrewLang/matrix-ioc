@@ -1,9 +1,8 @@
-#include "pch.h"
 #include "gtest/gtest.h"
-#include "LogLevelConverter.h"
+#include "logging/LogLevelConverter.h"
 
 
-namespace Connectivity
+namespace Matrix
 {	TEST(LogLevelConverterTests, ConvertToString) {
 		LogLevelConverter converter;
 

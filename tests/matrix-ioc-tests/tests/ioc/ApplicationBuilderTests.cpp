@@ -1,17 +1,19 @@
 #include "gtest/gtest.h"
-#include "ApplicationBuilder.h"
+#include "ioc/ApplicationBuilder.h"
 #include "ApiHandleComponent.h"
 #include "InitializeComponent.h"
-#include "ApplicationStartBlock.h"
-#include "LoggerFactory.h"
+#include "ioc/ApplicationStartBlock.h"
+#include "logging/LoggerFactory.h"
 #include "MockApplication.h"
 
 #include <functional>
 
-using std::function;
 
-namespace Connectivity
+
+namespace Matrix
 {
+	using std::function;
+
 	TEST(ApplicationBuilderTests, Constructor) {
 		ApplicationBuilder builder;
 	}
@@ -34,7 +36,7 @@ namespace Connectivity
 		auto factory = std::make_shared<LoggerFactory>();
 
 		function<void(ApplicationStartBlockContext&)> action = [](ApplicationStartBlockContext& context) {};
-			
+
 
 		builder
 			.useBlock<ApplicationStartBlock>(action, factory, "block1", 100)

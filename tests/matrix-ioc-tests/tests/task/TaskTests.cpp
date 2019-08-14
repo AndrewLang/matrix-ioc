@@ -4,10 +4,10 @@
 #include <thread>
 #include <chrono>
 
-#include "Task.h"
-#include "VsOutput.h"
+#include "task/Task.h"
+#include "logging/VsOutput.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 
@@ -31,7 +31,7 @@ namespace Connectivity
 	}
 	TEST(TaskTests, IsPrimeCode) {
 
-		std::function isPrime = [](int value) {
+		auto isPrime = [](int value) {
 			VsOutput::writeWithName("Task", "Start checking", value, "...");
 			for (int i = 2; i < value; ++i) {
 				if (value%i == 0)

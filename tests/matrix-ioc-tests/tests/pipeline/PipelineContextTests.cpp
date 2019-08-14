@@ -1,11 +1,12 @@
 #include "gtest/gtest.h"
-#include "PipelineContext.h"
-#include <any>
+#include "pipeline/PipelineContext.h"
 
-using namespace std;
 
-namespace Connectivity
+
+namespace Matrix
 {
+	using namespace std;
+
 	TEST(PipelineContextTests, Constructor) {
 		PipelineContext context;
 	}
@@ -28,5 +29,5 @@ namespace Connectivity
 
 		ASSERT_EQ("pxi", context.getProperty<string>("name"));
 		ASSERT_EQ(1, context.getProperty<int>("version"));
-	}		
+	}
 }

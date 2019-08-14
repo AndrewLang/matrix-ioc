@@ -1,9 +1,9 @@
 #pragma once
-#include "IServiceContainer.h"
-#include "IServiceProvider.h"
+#include "ioc/IServiceContainer.h"
+#include "ioc/IServiceProvider.h"
 #include "MockServiceprovider.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	class MockServiceContainer: public IServiceContainer
 	{

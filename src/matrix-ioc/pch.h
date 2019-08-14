@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef PCH_H
+#define PCH_H
+
 #include "stdafx.h"
 
 #include <chrono>
@@ -22,3 +26,6 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
+
+
+#endif //PCH_H

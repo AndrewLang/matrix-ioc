@@ -1,12 +1,12 @@
 #include "gtest/gtest.h"
-#include "ServiceContainer.h"
-#include "ServiceDescriptor.h"
+#include "ioc/ServiceContainer.h"
+#include "ioc/ServiceDescriptor.h"
 #include "Rectangle.h"
 #include "Circle.h"
 #include "Shape.h"
 #include "TypeInfo.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(ServiceContainerTests, Constructor) {
 		ServiceContainer container;

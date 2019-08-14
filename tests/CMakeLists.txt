@@ -33,11 +33,5 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 include_directories(${gtest_SOURCE_DIR}/include)
 
 
-message(STATUS "CMAKE Binary dir: " ${CMAKE_CURRENT_BINARY_DIR})
-message(STATUS "Gtest source dir: " ${gtest_SOURCE_DIR})
-message(STATUS "Gtest binary dir: " ${binary_dir})
-message(STATUS "CMake source dir: " ${CMAKE_SOURCE_DIR})
-
-
 add_subdirectory ("matrix-ioc-tests")
 

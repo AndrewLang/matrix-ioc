@@ -1,15 +1,20 @@
 #include "gtest/gtest.h"
-#include "StringExtensions.h"
-#include "VsOutput.h"
+#include "common/StringExtensions.h"
+#include "logging/VsOutput.h"
 
 #include <functional>
 
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	using std::vector;
 	using std::wstring;
+
+	TEST(StringExtensionsTests, ConstStringValue) {
+		ASSERT_EQ("\n", string(StringExtensions::NewLine));
+		ASSERT_EQ("\t", string(StringExtensions::Tab));
+	}
 
 	TEST(StringExtensionsTests, SplitWithDefault) {
 		string text = "this is a test!";
@@ -35,7 +40,7 @@ namespace Connectivity
 		const string delimiters = "_&";
 		string value = "ven_8086&dev_15b7&subsys_81c5103c&rev_00";
 
-		std::function isDelimiter = [](const string& delimiters, char c)
+		auto isDelimiter = [](const string& delimiters, char c)
 		{
 			for (auto cValue : delimiters)
 			{
@@ -86,7 +91,7 @@ namespace Connectivity
 
 	TEST(StringExtensionsTests, Replace) {
 		ASSERT_EQ("test hello world", StringExtensions::replace("test hello hi", "hi", "world"));
-		ASSERT_EQ("C:\\program files\\keysight\\iols", StringExtensions::replace(R"(C:\program files\keysight\iols)", R"(\)", R"(\)"));
+		ASSERT_EQ("C:\\program files\\company\\product", StringExtensions::replace(R"(C:\program files\company\product)", R"(\)", R"(\)"));
 	}
 
 	TEST(StringExtensionsTests, CompareIgnoreCase) {
@@ -119,8 +124,6 @@ namespace Connectivity
 		ASSERT_EQ("0", StringExtensions::textBetween("PCIROOT(0)#PCI(1D00)#PCI(0000)#PCI(0300)", '(', ')'));
 		ASSERT_EQ("t with s", StringExtensions::textBetween("this is a tex(t with s)omething", '(', ')'));
 	}
-
-
 
 	TEST(StringExtensionsTests, ToLower) {
 		ASSERT_EQ("", StringExtensions::toLower(""));
@@ -164,7 +167,7 @@ namespace Connectivity
 		ASSERT_EQ(actual, "test");
 	}
 
-	TEST(StringExtensionsTests, StartsWith) {		
+	TEST(StringExtensionsTests, StartsWith) {
 		ASSERT_TRUE(StringExtensions::startsWith("this is a test", "this"));
 		ASSERT_TRUE(StringExtensions::startsWith("\\this is a test", "\\"));
 		ASSERT_FALSE(StringExtensions::startsWith("this is a test", "This"));

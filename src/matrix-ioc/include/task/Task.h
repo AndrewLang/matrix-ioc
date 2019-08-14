@@ -5,7 +5,7 @@
 #include <memory>
 
 
-namespace Connectivity
+namespace Matrix
 {
 	using Action = std::function<void()>;
 

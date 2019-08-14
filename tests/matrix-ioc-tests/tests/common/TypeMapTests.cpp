@@ -1,7 +1,10 @@
 #include "gtest/gtest.h"
-#include "TypeMap.h"
 
-namespace Connectivity
+#include "ioc/TypeInfo.h"
+#include "ioc/TypeMap.h"
+
+
+namespace Matrix
 {
 	TEST(TypeMapTests, Constructor) {
 		TypeMap<int> map1;

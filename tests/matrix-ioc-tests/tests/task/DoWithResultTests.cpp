@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "DoWithResult.h"
+#include "task/DoWithResult.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(DoWithResultTests, Constructor) {
 		auto lambda = [](int x) {return x; };

@@ -5,6 +5,7 @@
 namespace Matrix
 {
 	using std::shared_ptr;
+	using std::vector;
 
 	ConfigurationBuilder::ConfigurationBuilder()
 	{

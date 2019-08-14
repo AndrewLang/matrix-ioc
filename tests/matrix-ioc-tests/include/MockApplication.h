@@ -1,7 +1,7 @@
 #pragma once
-#include "ApplicationBase.h"
+#include "ioc/ApplicationBase.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	class MockApplication: public ApplicationBase
 	{

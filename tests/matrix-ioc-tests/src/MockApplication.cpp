@@ -1,7 +1,7 @@
 #include "MockApplication.h"
 
 
-namespace Connectivity
+namespace Matrix
 {
 	MockApplication::MockApplication()
 	{

@@ -1,11 +1,13 @@
 #include "gtest/gtest.h"
-#include "PipelineBlock.h"
-#include "LoggerFactory.h"
-#include "PipelineContext.h"
+#include "pipeline/PipelineBlock.h"
+#include "pipeline/PipelineContext.h"
+#include "logging/LoggerFactory.h"
 
-namespace Connectivity
+
+namespace Matrix
 {
 	using std::function;
+
 	TEST(PipelineBlockTests, Constructor) {
 		function<void(PipelineContext&)> action = [](PipelineContext& context) {};
 

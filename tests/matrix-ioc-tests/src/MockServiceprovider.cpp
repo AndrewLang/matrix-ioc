@@ -1,6 +1,6 @@
 #include "MockServiceprovider.h"
 
-namespace Connectivity
+namespace Matrix
 {
 
 	

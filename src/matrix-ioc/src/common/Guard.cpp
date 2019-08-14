@@ -1,4 +1,3 @@
-// #include "stdafx.h"
 #include "common/Guard.h"
 #include "common/StringExtensions.h"
 

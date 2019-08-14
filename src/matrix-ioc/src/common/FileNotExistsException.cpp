@@ -1,4 +1,3 @@
-//#include "stdafx.h"
 #include "common/FileNotExistsException.h"
 #include "common/TextFormatter.h"
 

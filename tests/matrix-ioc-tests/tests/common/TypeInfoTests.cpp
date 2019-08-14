@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "TypeInfo.h"
+#include "ioc/TypeInfo.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(TypeInfoTests, Constructor) {
 		TypeInfo info(&typeid(int));

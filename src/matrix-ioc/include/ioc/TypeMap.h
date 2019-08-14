@@ -7,7 +7,7 @@
 namespace Matrix
 {
 	template<class TReturn>
-	class EXPORT TypeMap
+	class TypeMap
 	{
 	public:
 		void add(const TypeInfo* type, TReturn value);

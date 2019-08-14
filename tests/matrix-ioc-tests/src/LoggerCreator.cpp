@@ -1,6 +1,6 @@
 #include "LoggerCreator.h"
 
-namespace Connectivity
+namespace Matrix
 {
 
 	LoggerCreator::LoggerCreator()

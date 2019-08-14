@@ -11,14 +11,14 @@ namespace Matrix
 
 		~ConfigurationBuilder();
 
-		virtual IConfigurationBuilder& add(shared_ptr<IConfigurationProvider> provider) override;
+		virtual IConfigurationBuilder& add(std::shared_ptr<IConfigurationProvider> provider) override;
 
-		virtual shared_ptr<IConfigurationRoot> build() override;
+		virtual std::shared_ptr<IConfigurationRoot> build() override;
 
-		virtual vector<shared_ptr<IConfigurationProvider>> getProviders() override;
+		virtual std::vector<std::shared_ptr<IConfigurationProvider>> getProviders() override;
 
 	private:
-		vector<shared_ptr<IConfigurationProvider>> mProviders;
+		std::vector<std::shared_ptr<IConfigurationProvider>> mProviders;
 	};
 
 

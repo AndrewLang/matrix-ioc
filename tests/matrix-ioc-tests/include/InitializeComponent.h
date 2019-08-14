@@ -1,15 +1,15 @@
 #pragma once
-#include "IComponent.h"
+#include "ioc/IComponent.h"
 
-namespace Connectivity
+namespace Matrix
 {
 
-	class ApiHandleComponent: public IComponent
+	class InitializeComponent : public IComponent
 	{
 	public:
-		ApiHandleComponent();
+		InitializeComponent();
 
-		~ApiHandleComponent();
+		~InitializeComponent();
 
 		void configureServices(std::shared_ptr<IServiceContainer> serviceContainer) override;
 
@@ -19,3 +19,4 @@ namespace Connectivity
 	};
 
 }
+

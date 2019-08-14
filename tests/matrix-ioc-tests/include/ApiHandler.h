@@ -1,7 +1,7 @@
 #pragma once
 #include "IApiHandler.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	class ApiHandler : public IApiHandler
 	{

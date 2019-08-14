@@ -1,7 +1,7 @@
 #include "IApiHandler.h"
 
 
-namespace Connectivity
+namespace Matrix
 {
 	
 

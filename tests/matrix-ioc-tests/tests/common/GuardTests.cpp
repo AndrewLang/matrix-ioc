@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
-#include "Guard.h"
+#include "common/Guard.h"
 #include <stdio.h>
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(GuardTests, NotNull) {
 		EXPECT_ANY_THROW(

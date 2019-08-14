@@ -1,14 +1,16 @@
 #pragma once
-#include "ILoggerFactory.h"
-#include "LoggerFactory.h"
-#include "VsOutputLoggerProvider.h"
+#include "logging/ILoggerFactory.h"
+#include "logging/LoggerFactory.h"
+#include "logging/VsOutputLoggerProvider.h"
 
 #include <memory>
 
-using std::shared_ptr;
 
-namespace Connectivity
+
+namespace Matrix
 {
+	using std::shared_ptr;
+
 	class LoggerCreator
 	{
 	public:

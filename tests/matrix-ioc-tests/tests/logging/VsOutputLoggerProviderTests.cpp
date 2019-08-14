@@ -1,9 +1,8 @@
-#include "pch.h"
 #include "gtest/gtest.h"
-#include "VsOutputLoggerProvider.h"
-#include "ILogger.h"
+#include "logging/VsOutputLoggerProvider.h"
+#include "logging/ILogger.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(VsOutputLoggerProviderTests, Constructor) 
 	{

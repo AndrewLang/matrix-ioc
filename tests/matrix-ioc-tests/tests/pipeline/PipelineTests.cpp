@@ -1,15 +1,17 @@
 #include "gtest/gtest.h"
-#include "Pipeline.h"
-#include "PipelineBlock.h"
-#include "LoggerFactory.h"
+#include "pipeline/Pipeline.h"
+#include "pipeline/PipelineBlock.h"
+#include "logging/LoggerFactory.h"
 
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	using std::function;
 	using std::vector;
 	using std::shared_ptr;
+
+
 	TEST(PipelineTests, Constructor) {
 		vector<shared_ptr<IPipelineBlock>> blocks;
 		auto loggerFactory = std::make_shared<LoggerFactory>();

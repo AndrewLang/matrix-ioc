@@ -1,23 +1,25 @@
 #include "gtest/gtest.h"
-#include "InternalLogger.h"
-#include "ILogger.h"
-#include "LoggerFactory.h"
-#include "ConsoleLoggerProvider.h"
+#include "logging/InternalLogger.h"
+#include "logging/ILogger.h"
+#include "logging/LoggerFactory.h"
+#include "logging/ConsoleLoggerProvider.h"
 
-namespace Connectivity
+namespace Matrix
 {
+	using namespace std;
+
 	TEST(InternalLoggerTests, Constructor) 
 	{
-		/*auto factory = std::make_shared<LoggerFactory>();
+		auto factory = std::make_shared<LoggerFactory>();
 		InternalLogger logger(factory, "test");
 
 		EXPECT_EQ("test", logger.name);
 
-		logger.debug("test");*/
+		logger.debug("test");
 	}
 	TEST(InternalLoggerTests, AddProvider)
 	{
-		/*auto factory = std::make_shared<LoggerFactory>();
+		auto factory = std::make_shared<LoggerFactory>();
 		auto provider = std::make_shared<ConsoleLoggerProvider>();
 
 
@@ -27,8 +29,6 @@ namespace Connectivity
 		
 		EXPECT_EQ("test", logger.name);
 
-		logger.debug("test");*/
-
-	}
-	
+		logger.debug("test");
+	}	
 }

@@ -1,14 +1,10 @@
 #include "TestServices.h"
-#include "ILoggerFactory.h"
-#include "LoggerFactory.h"
-#include "IEnvironmentProfile.h"
-#include "TestRuntimeProfile.h"
-#include "VsOutputLoggerProvider.h"
-#include "platformCheckMacros.h"
-#include "IFileLocker.h"
-#include "WinFileLocker.h"
+#include "logging/ILoggerFactory.h"
+#include "logging/LoggerFactory.h"
+#include "logging/VsOutputLoggerProvider.h"
 
-namespace Connectivity
+
+namespace Matrix
 {
 	TestServices::TestServices()
 	{
@@ -22,11 +18,8 @@ namespace Connectivity
 	{
 		auto serviceProvider = std::make_shared<ServiceContainer>();
 		serviceProvider->singleton<ILoggerFactory, LoggerFactory>()
-			.singleton<IEnvironmentProfile, TestRuntimeProfile>();
+			;
 
-#if defined(_WIN32)
-		serviceProvider->singleton<IFileLocker, WinFileLocker>();
-#endif
 		auto loggerFactory = serviceProvider->resolveService<ILoggerFactory>();
 		loggerFactory->useProvider<VsOutputLoggerProvider>();
 

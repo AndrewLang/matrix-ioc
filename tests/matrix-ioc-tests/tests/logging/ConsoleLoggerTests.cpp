@@ -1,9 +1,8 @@
-#include "pch.h"
 #include "gtest/gtest.h"
-#include "ConsoleLogger.h"
+#include "logging/ConsoleLogger.h"
 
 
-namespace Connectivity
+namespace Matrix
 {	
 	TEST(ConsoleLoggerTests, Constructor) {
 		ConsoleLogger logger("test");

@@ -3,11 +3,18 @@ cmake_minimum_required (VERSION 3.12)
 
 
 if(WIN32)
-  # see https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/
-  message(STATUS "Set export all symbols on")
+	#[[
+		Export all symbold on windows
+		see https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/
+	]]
+   
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)   
 endif(WIN32)
 
+
+include_directories(
+	${CMAKE_SOURCE_DIR}/src/matrix-ioc
+)
 
 project(matrix-ioc VERSION 0.0.1 )
 
@@ -22,8 +29,10 @@ SET(HeaderFiles
 # source files
 SET(SourceFiles 
 	pch.cpp
-	src/common/BaseException.cpp
+
 	src/common/ArgumentNullException.cpp
+	src/common/BaseException.cpp
+	src/common/DataContext.cpp
 	src/common/FileLoadException.cpp
 	src/common/FileNotExistsException.cpp	
 	src/common/TextFormatter.cpp	
@@ -68,7 +77,6 @@ SET(SourceFiles
 	src/task/TaskWithResult.cpp
 )
 
-
 # add library definition
 add_library( ${PROJECT_NAME} SHARED ${SourceFiles} ${HeaderFiles})
 
@@ -77,12 +85,8 @@ add_definitions(-DEXPMODULE)
 
 add_precompiled_header(${PROJECT_NAME} pch.h SOURCE_CXX pch.cpp FORCEINCLUDE)
 
- message(STATUS "include dir: " ${CMAKE_SOURCE_DIR}/include )
- message(STATUS "ioc project source dir: " ${PROJECT_SOURCE_DIR}/include )
-
-target_include_directories(${PROJECT_NAME} 
-	PUBLIC  ${PROJECT_SOURCE_DIR}/include 
-)
+# 
+target_include_directories(${PROJECT_NAME} PUBLIC  ${PROJECT_SOURCE_DIR}/include )
 
 
 set_target_properties( ${PROJECT_NAME} PROPERTIES 

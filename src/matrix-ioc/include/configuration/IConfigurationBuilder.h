@@ -4,19 +4,16 @@
 #include "IConfigurationProvider.h"
 #include "IConfigurationRoot.h"
 
-using std::shared_ptr;
-using std::vector;
-
 namespace Matrix
 {
 	class IConfigurationBuilder
 	{
 	public:
-		virtual IConfigurationBuilder& add(shared_ptr<IConfigurationProvider> provider) = 0;
+		virtual IConfigurationBuilder& add(std::shared_ptr<IConfigurationProvider> provider) = 0;
 
-		virtual shared_ptr<IConfigurationRoot> build() = 0;
+		virtual std::shared_ptr<IConfigurationRoot> build() = 0;
 
-		virtual vector<shared_ptr<IConfigurationProvider>> getProviders() = 0;
+		virtual std::vector<std::shared_ptr<IConfigurationProvider>> getProviders() = 0;
 
 		template<class TProvider, class ... TArgs>
 		IConfigurationBuilder& useProvider(TArgs&&... args)

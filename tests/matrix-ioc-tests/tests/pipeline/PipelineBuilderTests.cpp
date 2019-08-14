@@ -1,12 +1,12 @@
 #include "gtest/gtest.h"
-#include "PipelineBuilder.h"
-#include "ServiceContainer.h"
-#include "ILoggerFactory.h"
-#include "LoggerFactory.h"
-#include "PipelineBlock.h"
-#include "PipelineContext.h"
+#include "pipeline/PipelineBuilder.h"
+#include "ioc/ServiceContainer.h"
+#include "logging/ILoggerFactory.h"
+#include "logging/LoggerFactory.h"
+#include "pipeline/PipelineBlock.h"
+#include "pipeline/PipelineContext.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	using std::string;
 	using std::function;

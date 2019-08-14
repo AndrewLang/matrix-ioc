@@ -1,14 +1,14 @@
-#include "pch.h"
+
 #include "gtest/gtest.h"
-#include "ILogger.h"
-#include "LoggerFactory.h"
-#include "ILoggerFactory.h"
-#include "ConsoleLoggerProvider.h"
+#include "logging/ILogger.h"
+#include "logging/LoggerFactory.h"
+#include "logging/ILoggerFactory.h"
+#include "logging/ConsoleLoggerProvider.h"
 
 #include <vector>
 
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(LoggerFactoryTests, Constructor)
 	{

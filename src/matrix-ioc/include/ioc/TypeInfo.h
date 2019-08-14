@@ -1,5 +1,6 @@
 #pragma once
-#include "../stdafx.h"
+#include "../../stdafx.h"
+
 #include <typeinfo>
 #include <atomic>
 #include <string>

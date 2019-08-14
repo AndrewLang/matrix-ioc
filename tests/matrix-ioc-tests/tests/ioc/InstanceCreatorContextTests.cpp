@@ -1,11 +1,11 @@
 #include "gtest/gtest.h"
-#include "InstanceCreatorContext.h"
+#include "ioc/InstanceCreatorContext.h"
 #include "MockServiceContainer.h"
 #include "Rectangle.h"
-#include "IServiceProvider.h"
-#include "IServiceContainer.h"
+#include "ioc/IServiceProvider.h"
+#include "ioc/IServiceContainer.h"
 
-namespace Connectivity
+namespace Matrix
 {
 	TEST(InstanceCreatorContextTests, Constructor) {
 		auto provider = new MockServiceprovider();

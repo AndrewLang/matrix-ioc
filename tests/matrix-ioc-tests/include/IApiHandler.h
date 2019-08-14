@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace Connectivity
+namespace Matrix
 {
 	class IApiHandler
 	{
