@@ -11,7 +11,6 @@ if(WIN32)
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)   
 endif(WIN32)
 
-
 include_directories(
 	${CMAKE_SOURCE_DIR}/src/matrix-ioc
 )
@@ -19,6 +18,7 @@ include_directories(
 project(matrix-ioc VERSION 0.0.1 )
 
 set(DEFAULT_BUILD_TYPE "Release")
+
 
 # header files
 SET(HeaderFiles 
@@ -81,7 +81,6 @@ SET(SourceFiles
 add_library( ${PROJECT_NAME} SHARED ${SourceFiles} ${HeaderFiles})
 
 add_definitions(-DEXPMODULE)
-
 
 add_precompiled_header(${PROJECT_NAME} pch.h SOURCE_CXX pch.cpp FORCEINCLUDE)
 

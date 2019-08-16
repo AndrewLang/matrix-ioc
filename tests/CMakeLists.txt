@@ -3,6 +3,7 @@
 find_package(Threads REQUIRED)
 
 
+add_compile_options(/wd26495)
 
 # Get GTest source and binary directories from CMake project
 
@@ -23,6 +24,7 @@ endif()
 
 # Prevent overriding the parent project's compiler/linker settings on Windows
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+# set_target_properties(googletest PROPERTIES LINK_FLAGS "/ignore:26495")
 
 # Add googletest directly to our build. This defines the gtest and gtest_main targets.
 add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src

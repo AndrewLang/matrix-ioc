@@ -1,6 +1,6 @@
 #pragma once
 #include "TypeInfo.h"
-
+#include <memory>
 
 namespace Matrix
 {

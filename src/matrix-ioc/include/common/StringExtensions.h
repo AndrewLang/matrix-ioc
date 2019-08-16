@@ -176,7 +176,7 @@ namespace Matrix
 		static TReturn convertTo(const std::string & value)
 		{
 			std::stringstream stream(value);
-			TReturn target;
+			TReturn target = TReturn();
 
 			if (typeid(TReturn) == typeid(std::string))
 			{

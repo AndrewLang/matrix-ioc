@@ -17,10 +17,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 
 
-
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-
 if(CMAKE_COMPILER_IS_GNUCXX)
     add_definitions(-std=gnu++0x)
 endif()

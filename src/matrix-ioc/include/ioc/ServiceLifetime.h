@@ -2,6 +2,7 @@
 #include <vector>
 #include <typeinfo>
 #include <functional>
+#include <memory>
 
 namespace Matrix
 {

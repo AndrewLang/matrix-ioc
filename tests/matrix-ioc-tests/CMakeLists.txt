@@ -5,7 +5,7 @@ include_directories(
 )
 
 
-project(ioc-tests)
+project(ioc-unit-tests)
 
 set(HeaderFiles 
 	pch.h

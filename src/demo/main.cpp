@@ -37,11 +37,10 @@ int main()
 	ConsoleLogger logger("main logger");
 
 	logger.debug("demo application")
-		.info("");
-
+		.info("log message to info");
 	
 
-	getchar();
+	auto value = getchar();
 
 	return 0;
 

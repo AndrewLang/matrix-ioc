@@ -18,7 +18,7 @@ namespace Matrix
 
 		IServiceContainer & registerService(ServiceDescriptor* descriptor) override;
 
-		std::shared_ptr<void> getService(const TypeInfo* typeInfo) override;
+		std::shared_ptr<void> getService(const TypeInfo* typeInfo);
 
 	protected:
 
